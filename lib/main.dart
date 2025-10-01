@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_exp_422/add_count_page.dart';
 import 'package:provider_exp_422/count_provider.dart';
+import 'package:provider_exp_422/list_page.dart';
+import 'package:provider_exp_422/list_provider.dart';
 
 void main() {
   runApp(
       ChangeNotifierProvider(
           create: (_) {
-            return CounterProvider();
+            return ListProvider();
           },
           child: MyApp()
       )
@@ -40,14 +42,16 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: MyHomePage(),
+      home: ListPage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
